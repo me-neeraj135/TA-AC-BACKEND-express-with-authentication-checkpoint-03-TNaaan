@@ -1,0 +1,135 @@
+<!-- @format -->
+
+<% include partial/header %>
+<main>
+  <section class="container section-pd flex justify-between">
+    <div class="flex-60">
+      <% if(data.length>0 || allInc){%>
+      <h1 class="primary-heading text-cnt mtb">your transactions history</h1>
+
+      <table>
+        <th>date</th>
+        <th style="width: 30%">particular</th>
+        <th>$ expenses-Dr.</th>
+        <th>$ earnings-Cr.</th>
+        <th>$ balance</th>
+        <!-- transaction history -->
+
+        <% var closingBalance=0 %> <% data.forEach(elm=>{%>
+        <tr class="row">
+          <td><%=elm.date%></td>
+          <td>
+            <%=(elm.source?elm.source:elm.category)%>
+
+            <button class="dis-none">
+              <a
+                style="color: red"
+                href="/earnings/<%=(elm.source?elm.source:elm.category)%>/<%= elm.id %>"
+                >delete</a
+              >
+            </button>
+          </td>
+          <td><%=(elm.category?elm.amount:00)%></td>
+          <td><%=(elm.source?elm.amount:00)%></td>
+          <td>
+            <%=closingBalance
+            =closingBalance+(elm.source?elm.amount:0)-(elm.category?elm.amount:0)%>
+          </td>
+        </tr>
+
+        <%})%>
+      </table>
+    </div>
+
+    <!-- filter-box -->
+    <div class="flt-box flex-30">
+      <h1 class="primary-heading mtb text-cnt">filter your transactions</h1>
+      <button class="btn btn-primary mtb">
+        <a style="text-transform: capitalize" href="/earnings/transactions">
+          all transaction</a
+        >
+      </button>
+
+      <div class="flex flex-wrap-yes justify-between">
+        <!-- filter income &  expenses  by date-->
+        <!-- 
+        <form class="flex-48" action="/earnings/inc/exp" method="post">
+          <select name="ctg" id="">
+            <option value="none" selected hidden disabled>
+              earnings & expenses
+            </option>
+            <option value="earnings">earnings</option>
+            <option value="expenses">expenses</option>
+            <option value="all-transaction">all-transaction</option>
+          </select>
+          <div>
+            <label for="from">from</label>
+            <input id="from" type="date" name="from" />
+
+            <label for="from">to</label>
+            <input id="to" type="date" name="to" />
+          </div>
+          <input class="find" type="submit" value="find" />
+        </form> -->
+
+        <!-- filter income by source -->
+
+        <form class="flex-48" action="/earnings/inc" method="post">
+          <select name="source" id="">
+            <option value="none" selected hidden disabled>
+              earnings by source
+            </option>
+            <% incSource.forEach(elm=>{%>
+
+            <option value="<%= elm %>"><%= elm %></option>
+            <%})%>
+          </select>
+          <div>
+            <label for="from">from</label>
+            <input id="from" type="date" name="from" />
+
+            <label for="to">to</label>
+            <input id="to" type="date" name="to" />
+          </div>
+          <input class="find" type="submit" value="find" />
+        </form>
+
+        <!-- filter expenses by category -->
+        <form
+          style="margin-top: 1rem"
+          class="flex-100"
+          action="/earnings/exp"
+          method="post"
+        >
+          <select name="category" id="expenses">
+            <option value="none" selected hidden disabled>
+              expenses category
+            </option>
+
+            <% expCategory.forEach(elm=>{%>
+
+            <option value="<%= elm %>"><%= elm %></option>
+            <%})%>
+          </select>
+          <div>
+            <label for="from">from</label>
+            <input id="from" type="date" name="from" />
+
+            <label for="from">to</label>
+            <input id="to" type="date" name="to" />
+          </div>
+          <input class="find" type="submit" value="find" />
+        </form>
+      </div>
+    </div>
+
+    <%}else{%>
+    <h1 class="primary-heading text-cnt mtb">
+      no transactions history available
+    </h1>
+
+    <%}%>
+  </section>
+</main>
+<script src="/javascripts/index.js"></script>
+<!-- <% include partial/footer %> -->

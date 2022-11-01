@@ -1,0 +1,232 @@
+<!-- @format -->
+
+<% include partial/header%>
+
+<main>
+  <section class="container section-pd flex justify-between">
+    <!-- expenses variables -->
+    <% var totalFood =0 %> <% var totalTrans=0 %> <% var totalHousing=0 %> <%
+    var totalPCare=0 %> <% var totalShopping=0 %> <% var totalHCare=0 %> <% var
+    totalMis=0 %>
+
+    <!-- expenses -->
+    <% if(expenses.length==0||expenses.length>0) { %> <% var
+    food=expenses.filter(elm=>{%><%return(elm._id==`food-and-drink`)%><%})%> <%
+    var
+    trans=expenses.filter(elm=>{%><%return(elm._id==`transportation`)%><%})%> <%
+    var
+    house=expenses.filter(elm=>{%><%return(elm._id==`housing-and-utilities`)%><%})%>
+    <% var
+    pCare=expenses.filter(elm=>{%><%return(elm._id==`personalCare`)%><%})%> <%
+    var hCare=expenses.filter(elm=>{%><%return(elm._id==`healthCare`)%><%})%> <%
+    var shop=expenses.filter(elm=>{%><%return(elm._id==`shopping`)%><%})%> <%
+    var hCare=expenses.filter(elm=>{%><%return(elm._id==`healthCare`)%><%})%> <%
+    var
+    miscellaneous=expenses.filter(elm=>{%><%return(elm._id==`miscellaneous`)%><%})%>
+
+    <div class="addExp-box flex-48">
+      <h2 class="secondary-heading text-cnt">your monthly Expenses</h2>
+      <span><%= month %></span>
+
+      <ul class="flex flex-wrap-yes">
+        <li class="food flex-30 text-cnt">
+          <a href="">
+            <span>food & drink</span> <br />
+            <span class="icon-spn">
+              <i class="fa-solid fa-mug-hot"></i>
+            </span>
+            <br />
+            <span
+              >$:<%if(food.length>0){%> <% totalFood=food[0].totalExpenses %>
+              <%=food[0].totalExpenses %> <%}else{%> 00.00 <%}%></span
+            >
+          </a>
+        </li>
+        <li class="transportation flex-30 text-cnt">
+          <a href="">
+            <span>transportation</span> <br />
+            <span class="icon-spn">
+              <i class="fa-solid fa-car"></i>
+            </span>
+            <br />
+            <span
+              >$: <%if(trans.length>0){%> <% totalTrans=trans[0].totalExpenses
+              %> <%=trans[0].totalExpenses %> <%}else{%> 00.00 <%}%>
+            </span>
+          </a>
+        </li>
+        <li class="housing flex-30 text-cnt">
+          <a href="">
+            <span>housing & utilities</span> <br />
+            <span class="icon-spn">
+              <i class="fa-solid fa-person-shelter"></i>
+            </span>
+            <br />
+            <span
+              >$:<%if(house.length>0){%> <% totalHousing=house[0].totalExpenses
+              %> <%=house[0].totalExpenses %> <%}else{%> 00.00 <%}%></span
+            >
+          </a>
+        </li>
+        <li class="personalCare flex-30 text-cnt">
+          <a href="">
+            <span>personal Care</span> <br />
+            <span class="icon-spn">
+              <i class="fa-solid fa-hand-holding-droplet"></i>
+            </span>
+            <br />
+            <span
+              >$:<%if(pCare.length>0){%> <% totalPCare=pCare[0].totalExpenses %>
+              <%=pCare[0].totalExpenses %> <%}else{%> 00.00 <%}%></span
+            >
+          </a>
+        </li>
+        <li class="shopping flex-30 text-cnt">
+          <a href="">
+            <span>shopping</span> <br />
+            <span class="icon-spn">
+              <i class="fa-solid fa-bag-shopping"></i>
+            </span>
+            <br />
+            <span
+              >$:<%if(shop.length>0){%> <% totalShopping=shop[0].totalExpenses
+              %> <%=shop[0].totalExpenses %> <%}else{%> 00.00 <%}%></span
+            >
+          </a>
+        </li>
+        <li class="healthCare flex-30 text-cnt">
+          <a href="">
+            <span>health care</span> <br />
+            <span class="icon-spn">
+              <i class="fa-solid fa-heart-circle-bolt"></i>
+            </span>
+            <br />
+            <span
+              >$:<%if(hCare.length>0){%> <% totalHCare=hCare[0].totalExpenses %>
+              <%=hCare[0].totalExpenses %> <%}else{%> 00.00 <%}%></span
+            >
+          </a>
+        </li>
+
+        <li class="miscellaneous flex-30 text-cnt">
+          <a href="">
+            <span>miscellaneous</span> <br />
+            <span class="icon-spn">
+              <i class="fa-solid fa-table-columns"></i>
+            </span>
+            <br />
+            <span
+              >$:<%if(miscellaneous.length>0){%>
+              <%totalMis=miscellaneous[0].totalExpenses %>
+              <%=miscellaneous[0].totalExpenses %> <%}else{%> 00.00 <%}%></span
+            >
+          </a>
+        </li>
+      </ul>
+      <div class="add-exp-ern-box">
+        <p>
+          total Expenses:$<%=Number(totalFood)+
+          Number(totalTrans)+Number(totalHousing)+
+          Number(totalPCare)+Number(totalShopping)+Number(totalHCare)+Number(totalMis)%>
+        </p>
+
+        <button class="btn btn-primary">
+          <a href="/earnings/transactions">show transaction</a>
+        </button>
+        <button class="btn btn-primary">
+          <a href="/expenses/new">add Expenses</a>
+        </button>
+      </div>
+    </div>
+
+    <% }%>
+    <!-- earnings-variables -->
+    <% var salaryTotal =0 %> <% var businessTotal=0 %> <% var tradTotal=0 %> <%
+    var othersTotal=0 %>
+
+    <!--earnings-->
+    <% if(earnings.length>0||earnings.length ==0){ %> <% var
+    salary=earnings.filter(elm=>{%><%return(elm._id==`salary`)%> <%})%> <% var
+    business = earnings.filter(elm=>{%><%return(elm._id==`business`)%> <%})%> <%
+    var trading = earnings.filter(elm=>{%><%return(elm._id==`trading`)%> <%})%>
+    <% var others=earnings.filter(elm=>{%><%return(elm._id==`others`)%> <%})%>
+
+    <div class="addErn-box flex-48">
+      <h2 class="secondary-heading text-cnt">your monthly Earings</h2>
+      <span><%= month %></span>
+
+      <ul class="flex flex-wrap-yes">
+        <li class="food flex-30 text-cnt">
+          <a href="">
+            <span>salary</span> <br />
+            <span class="icon-spn">
+              <i class="fa-solid fa-sack-dollar"></i>
+            </span>
+            <br />
+            <span
+              >$:<%if(salary.length>0){%> <% salaryTotal=salary[0].totalIncome%>
+              <%=salary[0].totalIncome%> <%}else{%> 00.00 <% }%>
+            </span>
+          </a>
+        </li>
+        <li class="transportation flex-30 text-cnt">
+          <a href="">
+            <span>business</span> <br />
+            <span class="icon-spn">
+              <i class="fa-solid fa-business-time"></i>
+            </span>
+            <br />
+            <span
+              >$:<%if(business.length>0){%> <%
+              businessTotal=business[0].totalIncome %>
+              <%=business[0].totalIncome%> <%}else{%> 00.00 <% }%></span
+            >
+          </a>
+        </li>
+        <li class="housing flex-30 text-cnt">
+          <a href="">
+            <span>trading</span> <br />
+            <span class="icon-spn">
+              <i class="fa-solid fa-piggy-bank"></i>
+            </span>
+            <br />
+            <span
+              >$:<%if(trading.length>0){%> <% tradTotal=trading[0].totalIncome
+              %> <%=trading[0].totalIncome%> <%}else{%> 00.00 <% }%></span
+            >
+          </a>
+        </li>
+
+        <li class="miscellaneous flex-30 text-cnt">
+          <a href="">
+            <span>others</span> <br />
+            <span class="icon-spn">
+              <i class="fa-solid fa-table-columns"></i>
+            </span>
+            <br />
+            <span
+              >$:<%if(others.length>0){%> <% othersTotal=others[0].totalIncome
+              %> <%=others[0].totalIncome%> <%}else{%> 00.00 <% }%></span
+            >
+          </a>
+        </li>
+      </ul>
+      <div class="add-exp-ern-box">
+        <p>
+          total Earings:$ <%=Number(salaryTotal)+
+          Number(businessTotal)+Number(tradTotal)+ Number(othersTotal)%>
+        </p>
+        <button class="btn btn-primary">
+          <a href="/earnings/transactions">show transaction</a>
+        </button>
+
+        <button class="btn btn-primary">
+          <a href="/earnings/new">add Earings</a>
+        </button>
+      </div>
+    </div>
+    <% }%>
+  </section>
+</main>
+
+<% include partial/footer%>

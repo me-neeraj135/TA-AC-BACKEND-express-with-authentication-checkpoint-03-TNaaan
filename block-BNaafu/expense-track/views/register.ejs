@@ -1,0 +1,56 @@
+<!-- @format -->
+<% include partial/header %>
+
+<main>
+  <section class="container section-pd">
+    <h1 class="primary-heading text-cnt mtb">register and track your money</h1>
+    <div class="register-form-box">
+      <form action="/users/new" method="post">
+        <label for="name"> name</label>
+        <input id="name" type="text" name="name" placeholder="name" />
+
+        <label for="email"> email</label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          placeholder="email"
+          required
+        />
+
+        <label for="password"> password</label>
+        <input
+          id="password"
+          type="password"
+          name="password"
+          placeholder="password"
+          required
+        />
+
+        <label for="age"> age</label>
+        <input id="age" type="number" name="age" placeholder="age" required />
+
+        <label for="photo"> photo</label>
+        <input
+          id="photo"
+          type="tel"
+          name="phone"
+          placeholder="phone"
+          required
+        />
+
+        <label for="country"> country</label>
+        <input
+          id="country"
+          type="text"
+          name="country"
+          placeholder="country"
+          required
+        />
+
+        <input class="submit" type="submit" value="register" />
+      </form>
+    </div>
+  </section>
+</main>
+<%include partial/footer %>

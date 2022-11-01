@@ -1,0 +1,104 @@
+/** @format */
+
+$bg-white: #f9f9f9;
+$drk-prp: #1d0c35;
+$LightCoral: #f08080;
+
+// register form
+
+.register-form-box {
+  width: 50%;
+  margin: auto;
+  padding: 1rem;
+  box-shadow: 0 0 5px gray;
+  border-radius: 5px;
+  form {
+    width: 100%;
+    label {
+      text-transform: capitalize;
+    }
+    input,
+    select {
+      width: 100%;
+      font-size: 1.1rem;
+      text-transform: capitalize;
+      border-radius: 5px;
+      border: 1px solid silver;
+      outline: none;
+
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+    }
+    select {
+      background-color: white;
+    }
+  }
+}
+
+// passbook table styling
+
+table,
+th,
+td {
+  border: 1px solid;
+  text-align: center;
+  padding: 0.5rem;
+}
+table {
+  width: 100%;
+  padding: 1rem;
+  color: $drk-prp;
+  background-color: $bg-white;
+  // box-shadow: 0 0 5px gray;
+  th {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+  }
+  tr {
+    td {
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+    &:hover {
+      background-color: white;
+
+      button {
+        display: inline-block;
+        background-color: white;
+        border: 1px solid silver;
+        border-radius: 3px;
+      }
+    }
+  }
+}
+
+// filter box-styling
+
+.flt-box {
+  //   border: 1px solid black;
+
+  form {
+    padding: 0.5rem;
+    border-radius: 5px;
+    box-shadow: 0 0 5px gray;
+    label {
+      text-transform: capitalize;
+      font-weight: 600;
+    }
+    input,
+    select {
+      width: 100%;
+      text-transform: capitalize;
+      margin-bottom: 0.5rem;
+      padding: 0.2rem;
+      border: 1px solid silver;
+      border-radius: 5px;
+    }
+  }
+}
+.find {
+  font-weight: 600;
+  text-transform: capitalize;
+  background-color: $LightCoral;
+  color: white;
+}

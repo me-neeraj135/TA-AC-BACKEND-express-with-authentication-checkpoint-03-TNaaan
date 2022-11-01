@@ -1,0 +1,90 @@
+/** @format */
+
+$bg-white: #f9f9f9;
+$drk-prp: #1d0c35;
+$LightCoral: #f08080;
+
+header {
+  box-shadow: 0 0 5px gray;
+  padding: 1rem 0;
+}
+.logo-box {
+  figure {
+    width: 3rem;
+    height: 3rem;
+  }
+  a {
+    color: $drk-prp;
+  }
+}
+.profileUl {
+  // border: 1px solid;
+  .home {
+    a {
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-transform: capitalize;
+      color: $drk-prp;
+    }
+  }
+  .profile-img-box {
+    position: relative;
+
+    span {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+  }
+  figure {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+
+    img {
+      border: 1px solid silver;
+      border-radius: 50%;
+    }
+  }
+}
+
+.dropDown-ul {
+  width: 20rem;
+  position: absolute;
+  top: 6rem;
+  right: 4rem;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 5px black;
+  background-color: white;
+
+  li {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    border-radius: 5px;
+    &:hover {
+      color: white;
+      background-color: $LightCoral;
+      a {
+        color: white;
+      }
+    }
+  }
+}
+
+.dis-none {
+  display: none;
+}
+
+.hover {
+  transform: scale(1.1);
+}
+
+// footer
+
+footer {
+  background-color: gray;
+  padding: 2rem 0;
+  color: #f9f9f9;
+}
