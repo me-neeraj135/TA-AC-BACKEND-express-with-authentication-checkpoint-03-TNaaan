@@ -1,0 +1,131 @@
+/**
+ * /* Global Styles
+ *
+ * @format
+ */
+
+/* General */
+html {
+  font-size: 16px;
+}
+
+/* Container */
+.container {
+  max-width: 100vw;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Anchor Decoration */
+a {
+  text-decoration: none;
+}
+
+/* Image Adjust */
+.full-width {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Positions */
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-fixed {
+  position: fixed;
+}
+
+.position-sticky {
+  position: sticky;
+}
+
+.z-index-100 {
+  z-index: 100;
+}
+
+.z-index-50 {
+  z-index: 50;
+}
+
+.z-index-10 {
+  z-index: 10;
+}
+
+.z-index-1 {
+  z-index: 1;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-block;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0.35rem 1rem;
+  border-radius: 0.2rem;
+  box-sizing: border-box;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn-primary {
+  a {
+    color: black;
+  }
+  border: 1px solid black;
+}
+
+.btn-secondary {
+  color: white;
+  background-color: purple;
+  border: 1px solid purple;
+}
+
+// text
+
+.text-cnt {
+  text-align: center;
+}
+
+.log-btn {
+  display: inline-block;
+  width: 6rem;
+  border: none;
+  outline: none;
+  padding: 0.5rem 0;
+  background: none;
+  border-radius: 0.2rem;
+  box-sizing: border-box;
+
+  a {
+    text-transform: capitalize;
+    font-weight: 600;
+    color: black;
+  }
+
+  // &:hover {
+  //   background-color: #1d0c35;
+  //   a {
+  //     text-transform: capitalize;
+  //     font-weight: 600;
+  //     color: white;
+  //   }
+  // }
+}
+
+.active {
+  background-color: #1d0c35;
+  a {
+    text-transform: capitalize;
+    font-weight: 600;
+    color: white;
+  }
+}

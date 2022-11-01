@@ -1,0 +1,29 @@
+<!-- @format -->
+
+<% include partial/header%>
+<main>
+  <section class="container section-pd">
+    <h1 class="primary-heading text-cnt mtb">add your Earings</h1>
+    <div class="register-form-box">
+      <form action="/earnings/new" method="post">
+        <label for="amount">amount</label>
+        <input id="amount" type="number" name="amount" placeholder="amount" />
+
+        <label for="date">date</label>
+        <input id="date" type="date" name="date" placeholder="date" />
+
+        <label for="source">source</label>
+        <select name="source">
+          <option value="none" selected hidden>select income source</option>
+          <option value="salary">salary</option>
+          <option value="business">business</option>
+          <option value="trading">trading</option>
+          <option value="others">others</option>
+        </select>
+
+        <input class="submit" type="submit" value="add" />
+      </form>
+    </div>
+  </section>
+</main>
+<% include partial/footer%>

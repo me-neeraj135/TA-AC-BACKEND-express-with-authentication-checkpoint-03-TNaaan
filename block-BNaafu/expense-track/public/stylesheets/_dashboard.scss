@@ -1,0 +1,86 @@
+/** @format */
+
+.addExp-box,
+.addErn-box {
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 5px gray;
+  ul {
+    gap: 1rem;
+    margin: 0.5rem 0;
+    li {
+      padding: 1rem;
+      border-radius: 5px;
+      span {
+        font-weight: 600;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+.fa-solid {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.food {
+  background-color: #f9e79f;
+  .fa-mug-hot {
+    background-color: #f4d03f;
+  }
+}
+
+.transportation {
+  background-color: #dee4f0;
+  .fa-car {
+    background-color: #9ba3d3;
+  }
+}
+.housing {
+  background-color: #f6ddcc;
+  .fa-person-shelter {
+    background-color: #f5cba7;
+  }
+}
+.personalCare {
+  background-color: #fadbd8;
+  .fa-hand-holding-droplet {
+    background-color: #f5b7b1;
+  }
+}
+
+.shopping {
+  background-color: #e8daef;
+  .fa-bag-shopping {
+    background-color: #d2b4de;
+  }
+}
+
+.healthCare {
+  background-color: #d5f5e3;
+  .fa-heart-circle-bolt {
+    background-color: #abebc6;
+  }
+}
+
+.miscellaneous {
+  background-color: #e8f6f3;
+  .fa-table-columns {
+    background-color: #d0ece7;
+  }
+}
+
+// earings styling
+
+// add button
+
+.add-exp-ern-box {
+  padding: 0.5rem 0;
+  p {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+  }
+}
