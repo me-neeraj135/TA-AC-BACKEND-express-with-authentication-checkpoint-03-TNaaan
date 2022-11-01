@@ -1,0 +1,77 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/f70ada2487.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div class="container flex align-center justify-between">
+        <div class="logo-box flex align-center">
+       
+          </figure>
+          <a class="primary-heading" href="/">money tracker</a>
+        </div>
+     <%if(user){%>
+     
+
+      <ul class="profileUl flex  flex-10 justify-between align-center">
+        <li class="home" >
+          <a href="/users">home</a>
+        </li>
+        
+
+        <li class="">
+          <div
+            class="profile-img-box flex flex-direction-column align-center"
+          >
+            <figure class="pImg-box">
+              <% if(user.avatar){%>
+                <img
+                  class="full-width"
+              
+                  src="<%=user.avatar %>" 
+                  alt="user-img"
+                />
+
+             <% }else{%>
+              <img
+              class="full-width"
+          
+              src="https://cdn-icons-png.flaticon.com/512/1177/1177568.png" 
+              alt="user-img"
+            />
+             <%}%>
+            </figure>
+            <span>Me ▼</span>
+          </div>
+
+          <ul class="dropDown-ul dis-none">
+            <li>name: <%= user.name %></li>
+            <li>email:<%= user.email %></li>
+            <li>
+              <a href="/users/logout">logout</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+     <%}%>
+
+        
+      </div>
+    </header>
+    <script src="/javascripts/partial.js"></script>
+

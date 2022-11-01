@@ -1,0 +1,201 @@
+/** @format */
+
+$bg-white: #f9f9f9;
+$drk-prp: #1d0c35;
+$LightCoral: #f08080;
+
+// common
+
+.height {
+  height: 100vh;
+}
+.mtb {
+  margin: 1rem 0;
+}
+.pd {
+  padding: 2rem;
+}
+
+.section-pd {
+  padding: 3rem 0;
+}
+.bgColor {
+  background-color: $bg-white;
+}
+.para {
+  font-size: 1rem;
+  font-weight: 300;
+  color: gray;
+}
+.primary-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.secondary-heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.red {
+  color: red;
+}
+.green {
+  background-color: rgb(177, 252, 206);
+  // color: #f9f9f9;
+}
+
+// login
+.log-reg-section {
+  //   height: 80vh;
+  // border: 5px solid $drk-prp;
+  // border-radius: 5px;
+  box-shadow: 0px 0px 10px rgb(128, 128, 128);
+
+  .log-reg-div {
+    background-color: $bg-white;
+
+    .log-reg-cnt {
+      background-color: white;
+      box-shadow: 0 0 5px black;
+      border-radius: 5px;
+      margin: auto;
+      padding: 2rem;
+      .log-reg-btn-box {
+        width: 50%;
+        margin: auto;
+        padding: 3px;
+        border: 2px solid $drk-prp;
+        border-radius: 5px;
+      }
+      form {
+        .label {
+          display: inline-block;
+          font-size: 1.1rem;
+          font-weight: 300;
+          margin: 0.2rem 0;
+        }
+        width: 100%;
+        .input {
+          width: 100%;
+          font-size: 1rem;
+          margin-bottom: 0.5rem;
+          padding: 0.5rem;
+          border-radius: 5px;
+
+          border: 1px solid silver;
+        }
+
+        button {
+          width: 100%;
+          background-color: $LightCoral;
+          a {
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: capitalize;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+// checkBox container
+
+.checkBox-cont {
+  width: 100%;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  .fgt {
+    text-transform: capitalize;
+    a {
+      color: black;
+    }
+
+    &:hover {
+      a {
+        color: $LightCoral;
+      }
+    }
+  }
+}
+.checkBox {
+  margin-right: 0.5rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  font-size: 1rem;
+  order: -1;
+  border-radius: 5px;
+  border: 1px solid silver;
+}
+
+.submit {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: white;
+  background-color: $LightCoral;
+}
+
+.auth-login-box {
+  span {
+    margin: 0 0.5rem;
+  }
+}
+
+// icon styling
+.icon-crl {
+  display: inline-block;
+
+  border-radius: 50%;
+
+  padding: 0.5rem;
+  box-shadow: 0 0 10px gray inset;
+
+  &:hover {
+    background-color: $LightCoral;
+    .fa-brands {
+      color: white;
+    }
+  }
+}
+.fa-brands {
+  font-size: 1.5rem;
+  color: black;
+}
+
+// email and password image
+input#email {
+  background-image: url("https://cdn.pixabay.com/photo/2020/09/14/20/34/letter-5572099_960_720.png");
+  background-size: 1.5rem;
+  background-position: 2% 50%;
+  background-repeat: no-repeat;
+  text-indent: 30px;
+
+  /* Extra Styling */
+  transition: 0.3s;
+}
+
+input#email:focus {
+  background-image: none;
+  text-indent: 0px;
+}
+
+input#password {
+  background-image: url("https://cdn.pixabay.com/photo/2016/09/12/06/13/lock-1663154_960_720.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-indent: 25px;
+
+  /* Extra Styling */
+  transition: 0.3s;
+}
+
+input#password:focus {
+  background-image: none;
+  text-indent: 0px;
+}

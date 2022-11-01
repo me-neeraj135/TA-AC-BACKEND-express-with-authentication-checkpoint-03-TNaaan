@@ -1,0 +1,103 @@
+
+    <% include partial/header %>
+    <main class="height flex align-center">
+      <section class="log-reg-section container flex justify-between">
+        <div style="background-color: white" class="flex-50 pd">
+          <h1 class="primary-heading mtb">Money Tracking</h1>
+          <p class="para">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum
+            animi, ratione expedita quod aut deleniti. Architecto, qui quidem!
+            Impedit nam soluta dolor iusto optio reiciendis natus fugit culpa
+            doloremque. Exercitationem!
+          </p>
+          <figure>
+            <img
+              class="full-width"
+              src="https://cdn.pixabay.com/photo/2018/08/29/09/12/business-3639450_960_720.jpg"
+              alt="img"
+            />
+          </figure>
+        </div>
+        <div class="log-reg-div flex flex-50">
+          <div class="log-reg-cnt flex-80">
+            <h1 class="primary-heading">tracker</h1>
+
+
+
+            <!-- log-reg-btn -->
+            <div class="log-reg-btn-box flex justify-between">
+              <button class="log-btn log active">
+                <a class="login" href="#">login</a>
+              </button>
+              <button class="log-btn reg">
+                <a class="login" href="/users/new">register</a>
+              </button>
+            </div>
+
+            <!-- login form -->
+
+            <form action="/users/login" method="post">
+
+              <label class="label" for="email">Email</label>
+              <input
+                class="input"
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                id="email"
+              />
+              
+              <label class="label" for="password">Password</label>
+              <input
+                class="input inputPassword"
+                type="password"
+                name="password"
+                placeholder="Your Password"
+                id="password"
+              />
+
+              <!-- checkBox-and-forgot-div -->
+              <div class="checkBox-cont flex justify-between">
+                <div class="flex">
+                  <label class="fgt" for="check">remember me</label>
+                  <input
+                    class="checkBox"
+                    type="checkbox"
+                    name="check"
+                    id="check"
+                  />
+                </div>
+                <p class="fgt">
+
+                  <a href="/forgot">forgot password</a>
+                </p>
+              </div>
+
+              <!-- submit -button -->
+              <input type="submit" value="login" class="submit input" />
+            </form>
+
+            <!-- login with  -->
+
+            <div class="text-cnt">
+              <h2 class="secondary-heading mtb">or login with</h2>
+              <div class="auth-login-box">
+                <span class="icon-crl">
+                  <a href="/auth/github">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </span>
+                <span class="icon-crl">
+                  <a href="/auth/google">
+                    <i class="fa-brands fa-google"></i>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="/javascripts/index.js"></script>
+  </body>
+</html>
